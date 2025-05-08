@@ -1,8 +1,9 @@
 export async function fetchRecipeData() {
-    const res = await fetch(`https://dummyjson.com/recipes/`);
+    const res = await fetch(`https://dummyjson.com/recipes?limit=0`);
   
     if (res.status === 200) {
       const data = await res.json();
+      
       return data;
     } else {
       console.log('Error Fetching');

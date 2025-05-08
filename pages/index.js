@@ -12,10 +12,8 @@ export async function getStaticProps() {
   const data = await getAllPost();
   const posts = data.recipes || [];
 
-  const featuredPosts = [...posts].sort((a, b) => b.rating - a.rating).slice(0, FEATURED_RECIPE_COUNT);
-
   return {
-    props: { posts: featuredPosts },
+    props: { posts },
     revalidate: 60,
   };
 }
@@ -25,6 +23,8 @@ export default function Home({ posts }) {
   const filteredPosts = posts.filter(post =>
     post.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const displayPosts = searchQuery ? filteredPosts : posts.slice(0, FEATURED_RECIPE_COUNT);
 
   return (
     <>
@@ -50,7 +50,7 @@ export default function Home({ posts }) {
           />
         </div>
         <div className="prereload">
-          {filteredPosts.map((post) => (
+          {displayPosts.map((post) => (
             <div key={post.id} className="recipeWrapper" style={{ margin: '10px' }}>
               <Link href={`/recipes/${post.id}`} style={{ textDecoration: 'none' }}>
                 <div>

@@ -1,9 +1,9 @@
-import { fetchDataByID, fetchRecipeData, getAllPost } from '@/components/fetchRecipe';
 import Image from 'next/image'
 import '../../styles/dynamicRoute.css'
 import '../../styles/global.css'
 import React from 'react';
 import Header from '../header';
+import { fetchDataByID, fetchRecipeData, getAllPost } from '@/components/fetchRecipe';
 
 export async function getStaticPaths() {
   // Pre-render pages for books with IDs 1-10

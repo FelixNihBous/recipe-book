@@ -1,0 +1,63 @@
+.header {
+    display: flex;
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+    justify-content: space-around;
+    border-bottom: 1px solid gainsboro;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.landingPage-Container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.prereload {
+    grid-template-rows: repeat(1fr, 1fr, 1fr);
+}
+
+.title {
+    /* line-height: 0.5; */
+    max-width: 690px;
+}
+
+.recipeWrapper {
+    border: solid 1px gainsboro;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    list-style: none;
+    text-decoration: none;
+    margin: 30px;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.prereload {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    width: auto;
+    justify-items: center;
+}
+
+@media (max-width: 768px) {
+    .title {
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    .prereload {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+}

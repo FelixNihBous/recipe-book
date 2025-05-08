@@ -1,0 +1,48 @@
+.recipeDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+.imageAndIngredients {
+    display: flex;
+    gap: 100px;
+}
+
+.imageAndIngredients Image {
+    width: 500px;
+    height: 500px;
+}
+
+.instruction h1 {
+    border-bottom: solid 2px orange;
+    width: 150px;
+}
+
+@media (max-width: 768px) {
+    .imageAndIngredients Image {
+        max-width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+
+    .infoDetails {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .imageAndIngredients {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+    }
+    
+}
